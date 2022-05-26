@@ -1,0 +1,50 @@
+html,
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+#section1 {
+    background: #7858A6;
+}
+
+#section2 {
+    background: #BB6464;
+}
+
+.section {
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 200%;
+}
+
+.percent {
+    position: absolute;
+    top: 65%;
+    font-size: 125%;
+}
+
+
+#next {
+
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    visibility: hidden;
+    background: #047ad6;
+    color: white;
+    border-radius: 5px;
+
+}
+
+#sections {
+    display: flex;
+    height: 100%;
+}
