@@ -400,11 +400,11 @@ const questions = [{
     },
     {
         "option1": {
-            "text": "Zengin bir ailede doğ ve keyfine bakmak",
+            "text": "Zengin bir ailede doğmak ve keyfine bakmak",
             "votes": 20864
         },
         "option2": {
-            "text": "Fakir ailede doğ ama zengin ailede sahip olacağından daha fazlasına sahip olmak için hep çalışmak",
+            "text": "Fakir ailede doğmak ama zengin ailede sahip olacağından daha fazlasına sahip olmak için hep çalışmak",
             "votes": 30088
         }
     },
