@@ -126,21 +126,20 @@ async function updateInfo() {
 function updateChatPercent(forceShow) {
     option1Percent = calculatePercent(votes.option1.length, votes.option2.length);
 
-    if (isNaN(option1Percent)) {
-        if (!forceShow) return;
-        //chatPercent1.innerHTML = "Chat oylamaya daha katılmadı.";
-        //chatPercent2.innerHTML = "Chat oylamaya daha katılmadı.";
-    } else {
 
+    if (isNaN(option1Percent)) {
+        if(!forceShow) return;
+        chatPercent1.innerHTML = "Chat: %0 (0)";
+        chatPercent2.innerHTML = "Chat: %0 (0)";
+    } else {
         chatPercent1.innerHTML = "Chat: %" + option1Percent + " (" + votes.option1.length + ")";
         chatPercent2.innerHTML = "Chat: %" + (100 - option1Percent) + " (" + votes.option2.length + ")";
-
-        progressContainer.style.visibility = "visible";
-        progress.style.visibility = "visible";
-        textArea1.style.visibility = "visible";
-        textArea2.style.visibility = "visible";
-        changeProgress(option1Percent);
     }
+    progressContainer.style.visibility = "visible";
+    progress.style.visibility = "visible";
+    textArea1.style.visibility = "visible";
+    textArea2.style.visibility = "visible";
+    changeProgress(option1Percent);
 
 }
 
