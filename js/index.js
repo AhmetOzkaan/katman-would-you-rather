@@ -45,6 +45,9 @@ function showQuestion() {
     text2.innerHTML = question.option2.text;
     next.style.visibility = "hidden";
 
+    textArea1.value = "";
+    textArea2.value = "";
+
     updateChatPercent(false);
 
 }
@@ -100,9 +103,16 @@ function nextQuestion() {
 
     progress.style.visibility = "hidden";
     progressContainer.style.visibility = "hidden";
+    textArea1.style.visibility = "hidden";
+    textArea2.style.visibility = "hidden";
 }
 
 async function updateInfo() {
+    if(!twitch._isConnected()){
+        chatInfo1.innerHTML = "Twitche bağlanılıyor...";
+        chatInfo2.innerHTML = "Twitche bağlanılıyor...";
+        return;
+    }
     while (voteTimeout > 0) {
         chatInfo1.innerHTML = "Oylama <span class = \"input\">" + voteTimeout + "</span> saniye sonra başlayacak.";
         chatInfo2.innerHTML = "Oylama <span class = \"input\">" + voteTimeout + "</span> saniye sonra başlayacak.";
@@ -118,8 +128,8 @@ function updateChatPercent(forceShow) {
 
     if (isNaN(option1Percent)) {
         if (!forceShow) return;
-        chatPercent1.innerHTML = "Chat oylamaya daha katılmadı.";
-        chatPercent2.innerHTML = "Chat oylamaya daha katılmadı.";
+        //chatPercent1.innerHTML = "Chat oylamaya daha katılmadı.";
+        //chatPercent2.innerHTML = "Chat oylamaya daha katılmadı.";
     } else {
 
         chatPercent1.innerHTML = "Chat: %" + option1Percent + " (" + votes.option1.length + ")";
@@ -127,7 +137,8 @@ function updateChatPercent(forceShow) {
 
         progressContainer.style.visibility = "visible";
         progress.style.visibility = "visible";
-        console.log(progressContainer.style.visibility)
+        textArea1.style.visibility = "visible";
+        textArea2.style.visibility = "visible";
         changeProgress(option1Percent);
     }
 
@@ -145,11 +156,17 @@ twitch.on('chat', (channel, userState, message) => {
 
     if (!debug && (votes.option1.includes(username) || votes.option2.includes(username))) return;
 
-    if ("1" == message.toLocaleUpperCase('tr-TR')) votes.option1.push(username);
-    else if ("2" == message.toLocaleUpperCase('tr-TR')) votes.option2.push(username);
+    if ("1" == message.toLocaleUpperCase('tr-TR')){
+        votes.option1.push(username);
+        textArea1.value += username+"\n";
+    }else if ("2" == message.toLocaleUpperCase('tr-TR')){
+        votes.option2.push(username);
+        textArea2.value += username+"\n";
+    }
     else return;
 
     updateChatPercent();
+
 
 });
 

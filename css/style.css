@@ -25,16 +25,35 @@ body {
 
 .percent {
     position: absolute;
-    top: 65%;
+    bottom: 25%;
+width: 15%;
     /*font-size: 125%;*/
-    color: #14081e;
+    color:#131314d9;
+
+}
+
+#percent1{
+    left: 5%;
+}
+
+#percent2{
+    left: 55%;
 }
 
 .chat {
     position: absolute;
-    top: 75%;
+    bottom: 7%;
+    width: 9%;
     /*font-size: 125%;*/
-    color: #14081e;
+    color: #131314d9;
+}
+
+#chatPercent1{
+    left: 8%;
+}
+
+#chatPercent2{
+    left: 58%;
 }
 
 .chatInfo {
@@ -42,6 +61,58 @@ body {
     top: 12%;
     color: #2e2e2e;
     font-size: 75%;
+}
+
+
+.text {
+    position: absolute;
+    top: 30%;
+    padding: 0px 3%;
+}
+
+
+.textArea {
+    position: absolute;
+    bottom: 13%;
+    visibility: hidden;
+    color: #2e2e2e;
+    width: 20%;
+    height: 30%;
+    padding: 4px 6px;
+    box-sizing: border-box;
+    border: 2px solid #4c4545;
+    border-radius: 4px;
+    background-color: #cfcbcb40;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    resize: none;
+}
+
+#textArea1{
+    left: 25%;
+}
+
+#textArea2{
+    left: 75%;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #52515285;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .input {
@@ -79,8 +150,7 @@ body {
     left: 5%;
     box-shadow: 2px 2px #282626;
     visibility: hidden;
-    background: linear-gradient(135deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-position: 0% 50%;
+    background: #46244C;
 }
 
 #progressContainer #progress {
@@ -93,8 +163,8 @@ body {
     transition: width 0.4s ease;
     position: absolute;
 
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    background-position: 100% 50%;
+
+    background: #C74B50;
 
 }
